@@ -5,6 +5,28 @@ $(function () {
 
 
   /*=================================================
+    スライドショー
+  ===================================================*/
+  $(function () {
+    const $images = $('.back-image');
+    let current = 0;
+
+    // 最初の画像に active を追加
+    $images.eq(current).addClass('active');
+
+    setInterval(function () {
+      // 現在の画像の active を外す
+      $images.eq(current).removeClass('active');
+
+      // 次の画像のインデックスに進む（ループ）
+      current = (current + 1) % $images.length;
+
+      // 次の画像に active を追加
+      $images.eq(current).addClass('active');
+    }, 5000); // 5秒ごとに切り替え
+  });
+
+  /*=================================================
     Inview（画面に表示されたタイミングで処理を実行）
   ===================================================*/
   $(window).scroll(function () {
