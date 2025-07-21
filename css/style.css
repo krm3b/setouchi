@@ -44,4 +44,177 @@ img {
   font-size: 100px;
   color: #323E4B;
   text-shadow: 11px 4px 2px rgba(0, 0, 0, 0.25);
+}
+
+.voice {
+  position: relative;
+  padding-bottom: 50px;
+}
+.voice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/voice.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.2;
+  z-index: -1;
+}
+.voice .container {
+  text-align: center;
+}
+.voice .container .item-left,
+.voice .container .item-right {
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.voice .container .item-left.inview,
+.voice .container .item-right.inview {
+  opacity: 1;
+  transform: scale(1);
+}
+.voice .container .item-left:hover,
+.voice .container .item-right:hover {
+  transform: scale(1.05);
+}
+.voice .container .item-left .avatar,
+.voice .container .item-right .avatar {
+  width: 80px;
+  height: 90px;
+}
+.voice .container .item-left:hover .avatar,
+.voice .container .item-right:hover .avatar {
+  animation: bounce 0.5s ease infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.voice .container .item-left .comment,
+.voice .container .item-right .comment {
+  width: 65%;
+  border-radius: 30px;
+  padding: 30px 50px;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .voice .container .item-left .comment,
+  .voice .container .item-right .comment {
+    width: 90%;
+    margin-inline: auto;
+  }
+}
+.voice .container .item-left .comment .info,
+.voice .container .item-right .comment .info {
+  border-bottom: 0.5px solid;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.voice .container .item-left .comment .meta,
+.voice .container .item-right .comment .meta {
+  margin-top: 10px;
+  text-align: right;
+}
+.voice .container .item-left:hover .comment,
+.voice .container .item-right:hover .comment {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .voice .container .item-left {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+}
+.voice .container .item-left .avatar {
+  margin-right: 40px;
+}
+@media (max-width: 768px) {
+  .voice .container .item-left .avatar {
+    margin: 30px 0 0 100px;
+  }
+}
+.voice .container .item-left .comment {
+  background-color: #D0DCEA;
+}
+.voice .container .item-left .comment::after {
+  position: absolute;
+  content: "";
+  border-top: 20px solid transparent;
+  border-right: 30px solid #D0DCEA;
+  left: -30px;
+  bottom: 40px;
+}
+@media (max-width: 768px) {
+  .voice .container .item-left .comment::after {
+    border-top: 30px solid #D0DCEA;
+    border-right: 20px solid transparent;
+    left: 130px;
+    bottom: -30px;
+  }
+}
+.voice .container .item-right {
+  justify-content: flex-end;
+  margin-block: 50px;
+}
+@media (max-width: 768px) {
+  .voice .container .item-right {
+    flex-direction: column;
+    margin-block: 30px;
+  }
+}
+.voice .container .item-right .avatar {
+  margin-left: 40px;
+}
+@media (max-width: 768px) {
+  .voice .container .item-right .avatar {
+    margin: 30px 100px 0 0;
+  }
+}
+.voice .container .item-right .comment {
+  background-color: #B4C6D9;
+}
+.voice .container .item-right .comment::after {
+  position: absolute;
+  content: "";
+  border-top: 20px solid transparent;
+  border-left: 30px solid #B4C6D9;
+  right: -30px;
+  bottom: 40px;
+}
+@media (max-width: 768px) {
+  .voice .container .item-right .comment::after {
+    border-top: 30px solid #B4C6D9;
+    border-left: 20px solid transparent;
+    right: 130px;
+    bottom: -30px;
+  }
+}
+.voice .container .btn {
+  display: inline-block;
+  background-color: #F29F57;
+  border-radius: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease;
+  padding: 10px 30px;
+  margin-top: 100px;
+  position: relative;
+}
+.voice .container .btn:active {
+  top: 4px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
 }/*# sourceMappingURL=style.css.map */
