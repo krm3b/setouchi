@@ -3,6 +3,8 @@
 .voice {
   position: relative;
   padding-bottom: 50px;
+  // 
+  margin-bottom: 100px;
   &::before {
       content: '';
       position: absolute;
@@ -37,6 +39,7 @@
       .avatar {
         width: 80px;
         height: 90px;
+        cursor: pointer;
       }
       &:hover .avatar {
         animation: bounce .5s ease infinite;
@@ -55,7 +58,9 @@
       .comment {
         width: 65%;
         border-radius: 30px;
+        cursor: pointer;
         padding: 30px 50px;
+        transition: .5s;
         position: relative;
         @include m.sp {
           width: 90%;
@@ -133,20 +138,6 @@
           right: 130px;
           bottom: -30px;
         }
-      }
-    }
-    .btn {
-      display: inline-block;
-      background-color: m.$accent-color;
-      border-radius: 40px;
-      box-shadow: 0 4px 4px rgba(0,0,0,25%);
-      transition: all 0.1s ease;
-      padding: 10px 30px;
-      margin-top: 100px;
-      position: relative;
-      &:active {
-        top: 4px;
-        box-shadow: 0 0 0 rgba(0,0,0,25%);
       }
     }
   }
