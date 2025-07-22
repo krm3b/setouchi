@@ -47,6 +47,24 @@ img {
   margin-bottom: 40px;
 }
 
+.btn {
+  display: inline-block;
+  background-color: #F29F57;
+  border-radius: 40px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.1s ease;
+  padding: 10px 40px;
+  margin-top: 100px;
+  position: relative;
+}
+.btn:hover {
+  background-color: #f0913f;
+}
+.btn:active {
+  top: 4px;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
+}
+
 .mainvisual {
   position: relative;
   text-align: center;
@@ -111,6 +129,7 @@ img {
 .voice {
   position: relative;
   padding-bottom: 50px;
+  margin-bottom: 100px;
 }
 .voice::before {
   content: "";
@@ -151,6 +170,7 @@ img {
 .voice .container .item-right .avatar {
   width: 80px;
   height: 90px;
+  cursor: pointer;
 }
 .voice .container .item-left:hover .avatar,
 .voice .container .item-right:hover .avatar {
@@ -171,7 +191,9 @@ img {
 .voice .container .item-right .comment {
   width: 65%;
   border-radius: 30px;
+  cursor: pointer;
   padding: 30px 50px;
+  transition: 0.5s;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -266,19 +288,191 @@ img {
     bottom: -30px;
   }
 }
-.voice .container .btn {
-  display: inline-block;
-  background-color: #F29F57;
-  border-radius: 40px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  transition: all 0.1s ease;
-  padding: 10px 30px;
-  margin-top: 100px;
-  position: relative;
+
+.event {
+  margin-bottom: 100px;
 }
-.voice .container .btn:active {
-  top: 4px;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0.25);
+.event .scroll-top {
+  height: 100px;
+  background: url(/img/event-logo.png) repeat-x;
+  background-size: auto 100%;
+  background-position: 0 center;
+  animation: scroll-left 15s linear infinite;
+  margin-bottom: 50px;
+}
+@keyframes scroll-left {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
+}
+.event .scroll-bottom {
+  height: 100px;
+  background: url(/img/event-logo.png) repeat-x;
+  background-position: 0 center;
+  background-size: auto 100%;
+  animation: scroll-right 15s linear infinite;
+  margin-top: 100px;
+}
+@keyframes scroll-right {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+.event .accordion .item {
+  position: relative;
+  margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .event .accordion .item {
+    width: 80%;
+    margin-inline: auto;
+  }
+}
+.event .accordion .item:last-child {
+  margin-bottom: 0;
+}
+.event .accordion .item .avatar-right,
+.event .accordion .item .avatar-left {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  transform: translateY(0);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.event .accordion .item .avatar-right {
+  right: 50px;
+}
+.event .accordion .item .avatar-left {
+  right: 150px;
+}
+@media (max-width: 768px) {
+  .event .accordion .item .avatar-left {
+    left: 30px;
+  }
+}
+.event .accordion .item .title {
+  width: 100%;
+  background-color: #E3EAF2;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.5s;
+  position: relative;
+  z-index: 1;
+  padding-block: 20px;
+}
+.event .accordion .item .title:hover {
+  background-color: #d2ddea;
+}
+.event .accordion .item .title:hover span {
+  transform: scale(1.2);
+}
+.event .accordion .item .title span {
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+}
+.event .accordion .item .content {
+  display: none;
+  background-color: #b4c6d9;
+  border-radius: 0 0 20px 20px;
+  padding: 40px;
+}
+@media (max-width: 768px) {
+  .event .accordion .item .content {
+    padding: 30px;
+  }
+}
+.event .accordion .item .content .flex {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  .event .accordion .item .content .flex {
+    flex-direction: column;
+  }
+}
+.event .accordion .item .content .left {
+  width: 47%;
+  height: 300px;
+  border-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .event .accordion .item .content .left {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+}
+.event .accordion .item .content .right {
+  width: 47%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-block: auto;
+}
+@media (max-width: 768px) {
+  .event .accordion .item .content .right {
+    width: 80%;
+    margin-inline: auto;
+    justify-content: space-around;
+  }
+}
+.event .accordion .item .content .right dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.event .accordion .item .content .right dl dt {
+  width: 45%;
+  margin-bottom: 30px;
+}
+.event .accordion .item .content .right dl dt:last-child {
+  margin-bottom: 0;
+}
+.event .accordion .item .content .right dl dd {
+  width: 55%;
+  margin-bottom: 30px;
+}
+.event .accordion .item .content .right dl dd:last-child {
+  margin-bottom: 0;
+}
+.event .accordion .open .title {
+  border-radius: 10px 10px 0 0;
+  z-index: 3;
+}
+.event .accordion .open .avatar-right,
+.event .accordion .open .avatar-left {
+  top: -50px;
+  opacity: 1;
+  animation: jump 0.8s ease;
+  z-index: 2;
+  opacity: 1;
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
 }
 
 .state .grid-gallery {
@@ -296,20 +490,25 @@ img {
 .state .grid-gallery .item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.5s ease;
 }
 .state .grid-gallery .item.item-morewide img {
-  object-position: 50% 70%;
+  -o-object-position: 50% 70%;
+     object-position: 50% 70%;
 }
 .state .grid-gallery .item.item-tall:nth-of-type(1) img {
-  object-position: 0% 50%;
+  -o-object-position: 0% 50%;
+     object-position: 0% 50%;
 }
 .state .grid-gallery .item.item-tall:nth-of-type(2) img {
-  object-position: 40% 50%;
+  -o-object-position: 40% 50%;
+     object-position: 40% 50%;
 }
 .state .grid-gallery .item.item-moretall img {
-  object-position: 4% 50%;
+  -o-object-position: 4% 50%;
+     object-position: 4% 50%;
 }
 .state .grid-gallery .item .caption {
   position: absolute;

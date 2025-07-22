@@ -48,3 +48,21 @@ img {
     text-shadow: 11px 4px 2px rgba(0, 0, 0, 0.25);
     margin-bottom: 40px;
 }
+
+.btn {
+    display: inline-block;
+    background-color: m.$accent-color;
+    border-radius: 40px;
+    box-shadow: 0 4px 4px rgba(0,0,0,25%);
+    transition: all 0.1s ease;
+    padding: 10px 40px;
+    margin-top: 100px;
+    position: relative;
+    &:hover {
+        background-color: darken(m.$accent-color, 5%);
+    }
+    &:active {
+        top: 4px;
+        box-shadow: 0 0 0 rgba(0,0,0,25%);
+    }
+}
