@@ -149,4 +149,24 @@ $(function () {
 
 
 
+  //---------------------------------------------------
+  // to top
+  //---------------------------------------------------
+  let pagetop = $(".to-top");
+  // 最初に画面が表示された時は、トップに戻るボタンを非表示に設定
+  pagetop.hide();
+
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 600) {
+      pagetop.fadeIn();
+    } else {
+      pagetop.fadeOut();
+    }
+  });
+
+  pagetop.click(function () {
+    $("body,html").animate({ scrollTop: 0 }, 500);
+
+    return false;
+  });
 });
