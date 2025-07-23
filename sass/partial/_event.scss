@@ -1,8 +1,10 @@
 @use "_mixin" as m;
 
 .event {
-  // ーーーーーーーーーーーーーーーーーあとでmargin変更
-  margin-bottom: 100px;
+  margin-bottom: m.$section-margin;
+  @include m.sp {
+    margin-bottom: m.$section-margin-sp;
+  }
   .scroll-top {
     height: 100px;
     background: url(/img/event-logo.png) repeat-x;
@@ -10,13 +12,8 @@
     background-position: 0 center;
     animation: scroll-left 15s linear infinite;
     margin-bottom: 50px;
-    @keyframes scroll-left {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: -1000px 0;
-      }
+    @include m.sp {
+      margin-bottom: 0;
     }
   }
   .scroll-bottom {
@@ -25,14 +22,9 @@
     background-position: 0 center;
     background-size: auto 100%;
     animation: scroll-right 15s linear infinite;
-    margin-top: 100px;
-    @keyframes scroll-right {
-      from {
-        background-position: 0 0;
-      }
-      to {
-        background-position: 1000px 0;
-      }
+    margin-top: 50px;
+    @include m.sp {
+      margin-top: m.$section-margin-sp;
     }
   }
   .accordion {
@@ -71,6 +63,7 @@
         background-color: m.$main-color;
         border-radius: 10px;
         text-align: center;
+        line-height: 15px;
         cursor: pointer;
         transition: background-color 0.5s;
         position: relative;
@@ -87,12 +80,19 @@
           position: absolute;
           right: 40px;
         }
+        .icon {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+        }
       }
       .content {
         display: none;
         background-color: #b4c6d9;
         border-radius: 0 0 20px 20px;
         padding: 40px;
+        position: relative;
+        z-index: 1;
         @include m.sp {
           padding: 30px;
         }
@@ -116,10 +116,6 @@
         }
         .right {
           width: 47%;
-          height: 200px;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
           margin-block: auto;
           @include m.sp {
             width: 80%;
@@ -129,6 +125,7 @@
           dl {
             display: flex;
             flex-wrap: wrap;
+            margin-bottom: 30px;
             dt {
               width: 45%;
               margin-bottom: 30px;
@@ -159,22 +156,38 @@
         animation: jump 0.8s ease;
         z-index: 2;
         opacity: 1;
-        @keyframes jump {
-          0% {
-            transform: translateY(0);
-          }
-          30% {
-            transform: translateY(-10px);
-          }
-          60% {
-            transform: translateY(0);
-          }
-          
-          100% {
-            transform: translateY(-5px);
-          }
-        }
       }
     }
+  }
+}
+@keyframes scroll-left {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px 0;
+  }
+}
+@keyframes scroll-right {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(0);
+  }
+  
+  100% {
+    transform: translateY(-5px);
   }
 }
