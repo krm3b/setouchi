@@ -1,6 +1,7 @@
 $(function () {
+
   /*=================================================
-    スライドショー
+    mainvisual :スライドショー
   ===================================================*/
   $(function () {
     const $images = $('.back-image');
@@ -22,25 +23,55 @@ $(function () {
   });
 
   /*=================================================
-    ヘッダー上部固定
+    header :上部固定
   ===================================================*/
   $(window).on('scroll', function () {
     const header = $('header');
-    const mvHeight = $('.mainvisual').outerHeight(); // メインビジュアルの高さ
+    const mvHeight = $('.mainvisual').outerHeight(); 
+    const placeholder = $('.header-placeholder');
+    const headerHeight = header.outerHeight();
+
     if ($(window).scrollTop() > mvHeight) {
       header.addClass('is-fixed');
+      placeholder.height(headerHeight); // ダミーに高さをセット
     } else {
       header.removeClass('is-fixed');
+      placeholder.height(0); // 高さをリセット
     }
-
   });
 
   /*=================================================
-    ハンバーガ―メニュー
+  header :スムーススクロール
   ===================================================*/
-
-
-
+  $('a[href^="#"]').click(function () {
+    const headerHeight = $('header').outerHeight();
+    let href = $(this).attr("href");
+    let target = $(href == "#" || href == "" ? "html" : href);
+    let position;
+    if (window.innerWidth <= 768) {
+      // SP表示のとき（補正なし）
+      position = target.offset().top;
+    } else {
+      // PC表示のとき（ヘッダー分の補正あり）
+      position = target.offset().top - headerHeight;
+    }
+    let speed = 600;
+    $("html, body").animate({ scrollTop: position }, speed, "swing");
+    return false;
+  });
+  
+  /*=================================================
+    header : ハンバーガ―メニュー
+  ===================================================*/
+  // ハンバーガーメニューをクリックした時
+  $(".toggle-btn").on("click", function () {
+    $("header").toggleClass("open");
+  });
+  // メニューのリンクをクリックした時
+  $(".nav-list, .nav-list a").on("click", function () {
+    $("header").removeClass("open");
+  });
+  
   /*=================================================
     Inview（画面に表示されたタイミングで処理を実行）
   ===================================================*/
