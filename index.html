@@ -40,15 +40,30 @@
                 画面の向こうに、励まし合える仲間がいる。
             </h1>
         </div>
-        
+
         <!--********************************************-->
         <!--* header                                   *-->
         <!--********************************************-->
-        <header>
+        <header class="main-header">
             <nav>
+                <div class="toggle-btn">
+                    <span class="line"></span>
+                    <span></span>
+                    <span class="line"></span>
+                </div>
 
+                <ul class="nav-list">
+                    <li class="nav-list__scroll"><a href="#">Top</a></li>
+                    <li class="nav-list__scroll"><a href="#advantage">Advantage</a></li>
+                    <li class="nav-list__scroll"><a href="#voice">Voice</a></li>
+                    <li class="nav-list__scroll"><a href="#event">Event</a></li>
+                    <li class="nav-list__scroll"><a href="#state">State</a></li>
+                    <li class="nav-list__scroll"><a href="how-to-use.html">How to use</a></li>
+                    <li class="nav-list__btn btn"><a href="#contact">作業会に参加する</a></li>
+                </ul>
             </nav>
         </header>
+        <div class="header-placeholder"></div>
 
         <!--********************************************-->
         <!--* main                                     *-->
@@ -63,7 +78,7 @@
                     <h2>Advantage</h2>
                 </div>
 
-                
+
             </section>
 
             <!-- -------------------------------------- -->
@@ -78,14 +93,16 @@
                 <div class="container">
 
                     <div class="item-left">
-                        <img src="img/voice1.png" class="avatar">
                         <div class="comment">
                             <p class="info">利用時間：仕事終わりの20時〜週4回</p>
-                            <p class="text">「毎日続けられるようになった」<br>ひとりで勉強してた時は3日坊主だったけど、誰かが作業してる姿を見ると自然と手が動きます。声かけもあたたかくて、居心地がとてもいいです。</p>
+                            <p class="text">
+                                「毎日続けられるようになった」<br>ひとりで勉強してた時は3日坊主だったけど、誰かが作業してる姿を見ると自然と手が動きます。声かけもあたたかくて、居心地がとてもいいです。
+                            </p>
                             <p class="meta">(20代 会社員女性)</p>
                         </div>
+                        <img src="img/voice1.png" class="avatar">
                     </div>
-                    
+
                     <div class="item-right">
                         <div class="comment">
                             <p class="info">利用時間：22時〜毎日参加</p>
@@ -94,19 +111,18 @@
                         </div>
                         <img src="img/voice2.png" class="avatar">
                     </div>
-                    
+
                     <div class="item-left">
-                        <img src="img/voice3.png" class="avatar">
                         <div class="comment">
                             <p class="info">利用時間：昼間・22時以降〜週2,3日</p>
-                            <p class="text"> 「ひとりじゃないと思える」<br>オンラインだから子どもが寝たあとや、家事の合間にも参加しやすいし、優しい人ばかりで安心です。情報交換もできて学びが多いです。</p>
+                            <p class="text">
+                                「ひとりじゃないと思える」<br>オンラインだから子どもが寝たあとや、家事の合間にも参加しやすいし、優しい人ばかりで安心です。情報交換もできて学びが多いです。</p>
                             <p class="meta">(30代 主婦)</p>
                         </div>
+                        <img src="img/voice3.png" class="avatar">
                     </div>
                     <a href="#" class="btn">作業会の使い方へ</a>
                 </div>
-
-
             </section>
 
             <!-- -------------------------------------- -->
@@ -116,10 +132,99 @@
             <section id="event" class="event">
                 <div class="section-title">
                     <h2>Event</h2>
+                    <div class="scroll-top"></div>
                 </div>
+                <div class="scroll-top"></div>
 
+                <div class="container accordion">
 
+                    <div class="item">
+                        <img src="img/event-avatar1.png" class="avatar-right">
+                        <button class="title">
+                            <img src="img/event-icon1.png" alt="" class="icon">
+                            セミナー<span>+</span>
+                        </button>
+                        <div class="content">
+                            <div class="flex">
+                                <img src="img/event1.png" class="left">
+                                <div class="right">
+                                    <dl>
+                                        <dt>開催日</dt>
+                                        <dd>毎週月曜<br>21:00〜</dd>
+                                        <dt>セミナー内容</dt>
+                                        <dd>マインドセット<br>アプリ開発<br>案件獲得必勝法<br>AI活用術...</dd>
+                                    </dl>
+                                    <p>毎回テーマが変わる学びタイム。<br>現場で活躍する講師や経験者が、実体験やノウハウをじっくり語ってくれます。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="item">
+                        <img src="img/event-avatar2.png" class="avatar-left">
+                        <button class="title">
+                            <img src="img/event-icon2.png" alt="" class="icon">
+                            初心者講習会<span>+</span>
+                        </button>
+                        <div class="content">
+                            <div class="flex">
+                                <img src="img/event1.png" class="left">
+                                <div class="right">
+                                    <dl>
+                                        <dt>開催日</dt>
+                                        <dd>毎週木曜<br>22:00〜</dd>
+                                    </dl>
+                                    <p>「こんなこと聞いていいのかな？」って不安も不要！講師や経験者がやさしく教えてくれる安心スペース。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="img/event-avatar3.png" class="avatar-right">
+                        <button class="title">
+                            <img src="img/event-icon3.png" alt="" class="icon">
+                            オンライン飲み会<span>+</span>
+                        </button>
+                        <div class="content">
+                            <div class="flex">
+                                <img src="img/event3.png" class="left">
+                                <div class="right">
+                                    <dl>
+                                        <dt>開催日</dt>
+                                        <dd>不定期 金曜<br>21:00〜</dd>
+                                        <dt>内容</dt>
+                                        <dd>チーム分け<br>自己紹介<br>ゲーム...</dd>
+                                    </dl>
+                                    <p>気づけば「また話したくなる仲間」ができてるかも。<br>飲み会後も続くつながりを、ここから。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <img src="img/event-avatar4.png" class="avatar-left">
+                        <button class="title">
+                            <img src="img/event-icon4.png" alt="" class="icon">
+                            ハッカソン<span>+</span>
+                        </button>
+                        <div class="content">
+                            <div class="flex">
+                                <img src="img/event4.png" class="left">
+                                <div class="right">
+                                    <dl>
+                                        <dt>開催日</dt>
+                                        <dd>不定期</dd>
+                                    </dl>
+                                    <p>3人1組でチームを組んで、metalife上で開発に挑戦！テーマに沿ったアイデアをカタチにし、成果を発表してみんなの投票で優勝チームを決定！</p>
+                                    <p>はじめてのチーム開発に、ぴったりの挑戦！<br>チーム開発を学んで、勝ちに行こう！</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="scroll-bottom"></div>
             </section>
 
             <!-- -------------------------------------- -->
@@ -131,65 +236,67 @@
                     <h2>State</h2>
                 </div>
 
-                <div class="grid-gallery">
-                    <div class="item item-large">
-                        <img src="img/stage_1.png" alt="作業会会場">
-                        <div class="caption">作業会会場全体</div>
-                    </div>
-                    
-                    <div class="item">
-                        <img src="img/image_20.png" alt="フロア">
-                        <div class="caption">フロア</div>
-                    </div>
-                    
-                    <div class="item item-tall">
-                        <img src="img/stage_3.png" alt="オンライン飲み会">
-                        <div class="caption">オンライン飲み会</div>
-                    </div>
-                    
-                    <div class="item">
-                        <img src="img/stage_2.png" alt="メタロゴ">
-                    </div>
-                    
-                    <div class="item item-morewide">
-                        <img src="img/image_12.png" alt="セミナー">
-                        <div class="caption">セミナー</div>
-                    </div>
-                    
-                    <div class="item item-moretall">
-                        <img src="img/image_29.png" alt="">
-                        <div class="caption">作業場所</div>
-                    </div>
-                    
+                <div class="container">
+                    <div class="grid-gallery">
+                        <div class="item item-large">
+                            <img src="img/state_1.png" alt="作業会会場">
+                            <div class="caption">作業会会場全体</div>
+                        </div>
 
-                    <div class="item item-tall">
-                        <img src="img/image_24.png" alt="休憩所">
-                        <div class="caption">休憩所</div>
-                    </div>
+                        <div class="item">
+                            <img src="img/image_20.png" alt="フロア">
+                            <div class="caption">フロア</div>
+                        </div>
 
-                    <div class="item">
-                        <img src="img/image_37.png" alt="レベル別講習会">
-                        <div class="caption">レベル別講習会</div>
-                    </div>
-                    
-                    <div class="item item-tall">
-                        <img src="img/image_38.png" alt="顔出しでもアバターでも">
-                        <div class="caption">顔出しでもアバターでも</div>
-                    </div>
+                        <div class="item item-tall">
+                            <img src="img/state_3.png" alt="オンライン飲み会">
+                            <div class="caption">オンライン飲み会</div>
+                        </div>
 
-                    <div class="item">
-                        <img src="img/image_36.png" alt="セミナー後の講師への質問会">
-                        <div class="caption">セミナー後の講師への質問会</div>
-                    </div>
-        
-                    <div class="item item-wide">
-                        <img src="img/image_28.png" alt="作業場所">
-                        <div class="caption">作業場所</div>
-                    </div>
+                        <div class="item">
+                            <img src="img/state_2.png" alt="メタロゴ">
+                        </div>
 
-                    <div class="item item-wide">
-                        <img src="img/image_7.png" alt="モクモクルーム">
-                        <div class="caption">モクモクルーム</div>
+                        <div class="item item-morewide">
+                            <img src="img/image_12.png" alt="セミナー">
+                            <div class="caption">セミナー</div>
+                        </div>
+
+                        <div class="item item-moretall">
+                            <img src="img/image_29.png" alt="">
+                            <div class="caption">作業場所</div>
+                        </div>
+
+
+                        <div class="item item-tall">
+                            <img src="img/image_24.png" alt="休憩所">
+                            <div class="caption">休憩所</div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/image_37.png" alt="レベル別講習会">
+                            <div class="caption">レベル別講習会</div>
+                        </div>
+
+                        <div class="item item-tall">
+                            <img src="img/image_38.png" alt="顔出しでもアバターでも">
+                            <div class="caption">顔出しでもアバターでも</div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/image_36.png" alt="セミナー後の講師への質問会">
+                            <div class="caption">セミナー後の講師への質問会</div>
+                        </div>
+
+                        <div class="item item-wide">
+                            <img src="img/image_28.png" alt="作業場所">
+                            <div class="caption">作業場所</div>
+                        </div>
+
+                        <div class="item item-wide">
+                            <img src="img/image_7.png" alt="モクモクルーム">
+                            <div class="caption">モクモクルーム</div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -198,43 +305,68 @@
         <!--********************************************-->
         <!--* footer                                   *-->
         <!--********************************************-->
-        <footer>
+
+        <div class="footer-avatar">
+            <img  class="footer-avatar1" src="img/footer-avatar1.png" alt="">
+            <img class="footer-avatar2" src="img/footer-avatar2.png" alt="">
+        </div>
+        <footer id="footer">
             <div class="container">
                 <section id="information" class="information">
+                    <div class="section-title">
+                        <h2>information</h2>
+                    </div>
                     <div class="info">
-                        <img src="img/information_1.png" alt="">
+                        <div class="info-img">
+                            <img src="img/information_1.png" alt="">
+                        </div>
                         <dl>
                             <dt>利用時間</dt>
                             <dd>5:00~25:00</dd>
                         </dl>
                     </div>
                     <div class="info">
-                        <img src="img/information_2.png" alt="">
+                        <div class="info-img">
+                            <img src="img/information_2.png" alt="">
+                        </div>
+
                         <dl>
                             <dt>料金</dt>
                             <dd>月額XXX円</dd>
                         </dl>
                     </div>
-                    <p>体験参加OK</p>
+                    <p><span>体験参加OK</span></p>
                     <p>ビジターとして作業会に入れます</p>
                     <div class="visitor">
                         <img src="img/image_25.png" alt="">
                     </div>
                     <p>まずは気軽にお試し参加 ▶︎▶︎▶︎</p>
                 </section>
-                
+
                 <section id="contact" class="contact">
-                    <label for="name">名前</label>
-                    <input type="text" name="name" id="name">
-                    <label for="mail">メールアドレス</label>
-                    <input type="email" name="mail" id="mail">
-                    <label for="comment">メッセージ</label>
-                    <textarea name="comment" id="comment"></textarea>
-                    <input type="submit" value="送信">
+                    <div class="section-title">
+                        <h2>contact</h2>
+                    </div>
+                    <form action="">
+                        <label for="name">名前</label>
+                        <input type="text" name="name" id="name">
+                        <label for="mail">メールアドレス</label>
+                        <input type="email" name="mail" id="mail">
+                        <label for="comment">メッセージ</label>
+                        <textarea name="comment" id="comment"></textarea>
+                        <input class="btn"  type="submit" value="送信">
+
+                    </form>
+
                 </section>
             </div>
 
-            <p>&copy;setouchi</p>
+            <div class="to-top">
+                <a href="#">Top</a>
+            </div>
+
+
+            <p class="copyright">&copy;setouchi</p>
         </footer>
     </div>
 

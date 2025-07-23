@@ -16,8 +16,21 @@
     <!--************************************************-->
     <!--* header                                       *-->
     <!--************************************************-->
-    <header>
+    <header class="sub-header">
+        <nav>
+            <div class="toggle-btn">
+                <span class="line"></span>
+                <span></span>
+                <span class="line"></span>
+            </div>
 
+            <ul class="nav-list">
+                <li class="nav-list__scroll"><a href="index.html">Top</a></li>
+                <li class="nav-list__scroll"><a href="#how-to-use">How to use</a></li>
+                <li class="nav-list__scroll"><a href="#floor">Floor</a></li>
+                <li class="nav-list__btn btn"><a href="index.html#contact">作業会に参加する</a></li>
+            </ul>
+        </nav>
     </header>
     
     <main>
@@ -39,7 +52,55 @@
         <section id="floor" class="floor">
             <div class="section-title">
                 <h2>Floor</h2>
+                <img src="img/floor-avatar1.png" class="avatar">
             </div>
+
+                <div class="container">
+                    <h3>あなたにあったフロアを見つけよう</h3>
+
+                    <div class="work-floor">
+                        <div class="title-flex">
+                            <img src="img/floor-icon1.png" class="icon">                            
+                            <p>作業フロア</p>
+                        </div>
+
+                        <div class="floor-flex">
+                            <div class="mokumoku item">
+                                <p class="title">モクモクルーム</p>
+                                <img src="img/floor1.png" class="fade-in">
+                                <p class="text">作業に集中したい時に利用<br>会話はチャットのみの部屋もあります</p>
+                            </div>
+                            <div class="meeting item">
+                                <p class="title">会議室</p>
+                                <img src="img/floor2.png" class="fade-in">
+                                <p class="text">各種講習会が実施されています<br>初心者講習会は初歩的なことから気軽に質問できます</p>
+                            </div>
+                        </div>
+                        <div class="other item">
+                            <p class="title">その他</p>
+                            <ul class="other-flex">
+                                <li><img src="img/floor3.png" class="fade-in"></li>
+                                <li><img src="img/floor4.png" class="fade-in"></li>
+                                <li><img src="img/floor5.png" class="fade-in"></li>
+                            </ul>
+                            <p class="text">思い思いの場所で、自分のペースで作業。会話しなくても、仲間の存在がやる気につながります。<br>時には雑談したり、先輩ユーザーからヒントをもらうことも！</p>
+                        </div>
+
+                    </div>
+
+                    <div class="rooftop-floor">
+                        <div class="title-flex">
+                            <img src="img/floor-icon2.png" alt="" class="icon">
+                            <p>屋上フロア</p>
+                        </div>
+                        <div class="rooftop item">
+                            <p class="text">毎週月曜日に開催されるセミナーはこの屋上フロアが会場です。毎回100名近い参加者が集まり、知識を深め合っています。<br>第一回ハッカソンの発表会もこちらで開催されました！</p>
+                            <img src="img/event1.png" class="fade-in">
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="backbtn">back<img src="img/back.png" class="icon"></a>
+                </div>
 
         </section>
 
@@ -53,7 +114,8 @@
         <p>&copy;setouchi</p>
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
 

@@ -3,6 +3,10 @@
 .voice {
   position: relative;
   padding-bottom: 50px;
+  margin-bottom: m.$section-margin;
+  @include m.sp {
+    margin-bottom: m.$section-margin-sp;
+  }
   &::before {
       content: '';
       position: absolute;
@@ -31,32 +35,26 @@
         opacity: 1;
         transform: scale(1);
       }
-      &:hover {
-        transform: scale(1.05);
-      }
       .avatar {
         width: 80px;
         height: 90px;
-      }
-      &:hover .avatar {
-        animation: bounce .5s ease infinite;
-      }
-      @keyframes bounce {
-        0% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
-        100% {
-          transform: translateY(0);
-        }
+        cursor: pointer;
       }
       .comment {
         width: 65%;
         border-radius: 30px;
+        cursor: pointer;
         padding: 30px 50px;
+        transition: .5s;
         position: relative;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 10px rgba($color: #000000, $alpha: .1);
+          +.avatar {
+            animation: bounce .5s ease infinite;
+            transform: scale(1.05);
+          }
+        }
         @include m.sp {
           width: 90%;
           margin-inline: auto;
@@ -71,19 +69,21 @@
           text-align: right;
         }
       }
-      &:hover .comment {
-      box-shadow: 0 4px 10px rgba($color: #000000, $alpha: .1);
-      }
     }
     .item-left {
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      &:last-of-type {
+        margin-bottom: m.$section-margin;
+      }
       @include m.sp {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
       }
       .avatar {
-        margin-right: 40px;
+        margin-right: 60px;
         @include m.sp {
-          margin: 30px 0 0 100px;
+          margin: 40px 0 0 100px;
         }
       }
       .comment {
@@ -112,9 +112,9 @@
         margin-block: 30px;
       }
       .avatar {
-        margin-left: 40px;
+        margin-left: 60px;
         @include m.sp {
-          margin: 30px 100px 0 0;
+          margin: 40px 100px 0 0;
         }
       }
       .comment {
@@ -135,19 +135,16 @@
         }
       }
     }
-    .btn {
-      display: inline-block;
-      background-color: m.$accent-color;
-      border-radius: 40px;
-      box-shadow: 0 4px 4px rgba(0,0,0,25%);
-      transition: all 0.1s ease;
-      padding: 10px 30px;
-      margin-top: 100px;
-      position: relative;
-      &:active {
-        top: 4px;
-        box-shadow: 0 0 0 rgba(0,0,0,25%);
-      }
-    }
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

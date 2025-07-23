@@ -1,6 +1,9 @@
 @use '_mixin' as m;
 
 .advantage {
-    height: 100vh;
+    height: calc(100vh - m.$header-height);
 
+    @include m.sp {
+        height: 100vh;
+    }
 }
