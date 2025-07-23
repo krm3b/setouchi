@@ -89,4 +89,33 @@ $(function () {
     }
   });
   // --------------------------------------------------
+
+
+
+
+  // -------------------------------------------------
+  // floor
+  // -------------------------------------------------
+  function fadeInOnScroll() {
+    $('.fade-in').each(function () {
+      const elemTop = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (scroll > elemTop - windowHeight + 100) {
+        $(this).addClass('active');
+      }
+    });
+  }
+
+  // 最初の実行
+  fadeInOnScroll();
+
+  // スクロールごとに実行
+  $(window).on('scroll', function () {
+    fadeInOnScroll();
+  });
+
+
+
 });
