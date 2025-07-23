@@ -89,7 +89,7 @@ img {
   pointer-events: none;
 }
 .btn:hover {
-  background-color: #f0913f;
+  background-color: rgb(240.1685082873, 145.4751381215, 63.3314917127);
 }
 .btn:hover::before {
   animation: shine 0.7s;
@@ -313,6 +313,167 @@ header .nav-list__btn {
     opacity: 1;
   }
 }
+.footer-avatar {
+  position: relative;
+  margin-bottom: -30px;
+  margin-left: 4%;
+  z-index: -1;
+}
+.footer-avatar img {
+  width: 100px;
+  height: 100px;
+}
+.footer-avatar .footer-avatar2 {
+  margin-left: -4%;
+}
+
+#footer {
+  background-color: #B4C6D9;
+}
+#footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 768px) {
+  #footer .container {
+    display: block;
+  }
+}
+#footer .container section {
+  width: 46%;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  #footer .container section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}
+#footer .container section .section-title {
+  font-size: 2rem;
+  text-align: center;
+}
+#footer .container .information {
+  text-align: center;
+}
+#footer .container .information .info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+#footer .container .information .info .info-img {
+  width: 30%;
+  text-align: end;
+}
+#footer .container .information .info .info-img img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+#footer .container .information .info dl {
+  display: flex;
+  width: 70%;
+}
+#footer .container .information .info dl dt {
+  width: 40%;
+  text-align: start;
+  padding-left: 8px;
+}
+#footer .container .information .info dl dd {
+  width: 60%;
+  text-align: start;
+}
+#footer .container .information p {
+  margin-top: 40px;
+}
+#footer .container .information p span {
+  font-weight: bold;
+}
+#footer .container .information .visitor {
+  margin-top: 10px;
+}
+#footer .container .information .visitor img {
+  width: 60%;
+  border-radius: 10px;
+}
+#footer .container .contact form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 40px auto 0 auto;
+}
+@media (max-width: 768px) {
+  #footer .container .contact form {
+    width: 90%;
+  }
+}
+#footer .container .contact form label {
+  width: 30%;
+  text-align: end;
+  padding-right: 12px;
+}
+#footer .container .contact form input {
+  width: 65%;
+  height: 40px;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 0 4px;
+  margin-bottom: 40px;
+}
+#footer .container .contact form textarea {
+  width: 65%;
+  height: 100px;
+  border: 1px solid #333333;
+  border-radius: 10px;
+  padding: 0 4px;
+  margin-bottom: 20px;
+}
+#footer .container .contact form .btn {
+  width: 40%;
+  margin: 40px auto 0 auto;
+}
+@media (max-width: 768px) {
+  #footer .container .contact form .btn {
+    width: 30%;
+  }
+}
+#footer .to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+}
+#footer .to-top a {
+  position: relative;
+  display: block;
+  background-image: url(../img/image_1.png);
+  background-position: 55% 38%;
+  background-size: 190%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px;
+}
+@media (max-width: 768px) {
+  #footer .to-top a {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+}
+#footer .copyright {
+  text-align: center;
+  font-size: 0.75rem;
+  background-color: #F5F5F5;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+
 .mainvisual {
   position: relative;
   text-align: center;
@@ -635,7 +796,7 @@ header .nav-list__btn {
   padding-block: 20px;
 }
 .event .accordion .item .title:hover {
-  background-color: #d2ddea;
+  background-color: rgb(209.5853658537, 220.9390243902, 233.9146341463);
 }
 .event .accordion .item .title:hover span {
   transform: scale(1.2);
@@ -758,44 +919,66 @@ header .nav-list__btn {
     transform: translateY(-5px);
   }
 }
-.state .grid-gallery {
-  max-width: 1000px;
+.state {
+  margin-bottom: 100px;
+}
+.state .container .grid-gallery {
+  max-width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 200px;
   gap: 12px;
 }
-.state .grid-gallery .item {
+@media (max-width: 768px) {
+  .state .container .grid-gallery {
+    display: block;
+  }
+}
+.state .container .grid-gallery .item {
   position: relative;
   overflow: hidden;
 }
-.state .grid-gallery .item img {
+@media (max-width: 768px) {
+  .state .container .grid-gallery .item {
+    margin-bottom: 20px;
+  }
+}
+.state .container .grid-gallery .item:hover .caption {
+  opacity: 1;
+}
+.state .container .grid-gallery .item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
-.state .grid-gallery .item.item-morewide img {
+.state .container .grid-gallery .item img:hover {
+  transform: scale(1.05);
+}
+.state .container .grid-gallery .item.item-morewide img {
   object-position: 50% 70%;
 }
-.state .grid-gallery .item.item-tall:nth-of-type(1) img {
+.state .container .grid-gallery .item.item-tall:nth-of-type(1) img {
   object-position: 0% 50%;
 }
-.state .grid-gallery .item.item-tall:nth-of-type(2) img {
+.state .container .grid-gallery .item.item-tall:nth-of-type(2) img {
   object-position: 40% 50%;
 }
-.state .grid-gallery .item.item-moretall img {
+.state .container .grid-gallery .item.item-tall:nth-of-type(3) img {
+  object-position: 20% 50%;
+}
+.state .container .grid-gallery .item.item-moretall img {
   object-position: 4% 50%;
 }
-.state .grid-gallery .item .caption {
+.state .container .grid-gallery .item .caption {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #333;
+  color: #333333;
   font-weight: bold;
   background: rgba(255, 255, 255, 0.7);
   opacity: 0;
@@ -803,29 +986,21 @@ header .nav-list__btn {
   padding: 10px;
   pointer-events: none;
 }
-.state .grid-gallery .item.item-large {
+.state .container .grid-gallery .item.item-large {
   grid-column: span 2;
   grid-row: span 2;
 }
-.state .grid-gallery .item.item-wide {
+.state .container .grid-gallery .item.item-wide {
   grid-column: span 2;
 }
-.state .grid-gallery .item.item-morewide {
+.state .container .grid-gallery .item.item-morewide {
   grid-column: span 3;
 }
-.state .grid-gallery .item.item-tall {
+.state .container .grid-gallery .item.item-tall {
   grid-row: span 2;
 }
-.state .grid-gallery .item.item-moretall {
+.state .container .grid-gallery .item.item-moretall {
   grid-row: span 3;
-}
-
-.item:hover img {
-  transform: scale(1.05);
-}
-
-.state .grid-gallery .item:hover .caption {
-  opacity: 1;
 }
 
 .floor {
