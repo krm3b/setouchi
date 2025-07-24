@@ -369,7 +369,8 @@ header .nav-list__btn {
 #footer .container .information .info .info-img img {
   width: 32px;
   height: 32px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #footer .container .information .info dl {
   display: flex;
@@ -451,7 +452,8 @@ header .nav-list__btn {
   background-size: 190%;
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px solid #fff;
   border-radius: 50%;
   font-weight: bold;
@@ -730,11 +732,6 @@ header .nav-list__btn {
   animation: scroll-left 15s linear infinite;
   margin-bottom: 50px;
 }
-@media (max-width: 768px) {
-  .event .scroll-top {
-    margin-bottom: 0;
-  }
-}
 .event .scroll-bottom {
   height: 100px;
   background: url(/img/event-logo.png) repeat-x;
@@ -837,7 +834,8 @@ header .nav-list__btn {
   width: 47%;
   height: 300px;
   border-radius: 20px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .event .accordion .item .content .left {
@@ -950,26 +948,32 @@ header .nav-list__btn {
 .state .container .grid-gallery .item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.5s ease;
 }
 .state .container .grid-gallery .item img:hover {
   transform: scale(1.05);
 }
 .state .container .grid-gallery .item.item-morewide img {
-  object-position: 50% 70%;
+  -o-object-position: 50% 70%;
+     object-position: 50% 70%;
 }
 .state .container .grid-gallery .item.item-tall:nth-of-type(1) img {
-  object-position: 0% 50%;
+  -o-object-position: 0% 50%;
+     object-position: 0% 50%;
 }
 .state .container .grid-gallery .item.item-tall:nth-of-type(2) img {
-  object-position: 40% 50%;
+  -o-object-position: 40% 50%;
+     object-position: 40% 50%;
 }
 .state .container .grid-gallery .item.item-tall:nth-of-type(3) img {
-  object-position: 20% 50%;
+  -o-object-position: 20% 50%;
+     object-position: 20% 50%;
 }
 .state .container .grid-gallery .item.item-moretall img {
-  object-position: 4% 50%;
+  -o-object-position: 4% 50%;
+     object-position: 4% 50%;
 }
 .state .container .grid-gallery .item .caption {
   position: absolute;
@@ -1018,10 +1022,18 @@ header .nav-list__btn {
   width: 60px;
   height: 70px;
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 0;
+  left: 15px;
   z-index: -1;
   animation: floatY 3s ease-in-out infinite;
+}
+@media (max-width: 768px) {
+  .floor .section-title .avatar {
+    width: 40px;
+    height: 50px;
+    top: -10px;
+    left: 5px;
+  }
 }
 .floor .container {
   position: relative;
@@ -1074,7 +1086,8 @@ header .nav-list__btn {
 .floor .container .work-floor .fade-in {
   height: 250px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-inline: auto;
 }
 .floor .container .work-floor .text {
@@ -1174,7 +1187,8 @@ header .nav-list__btn {
   width: 48%;
   height: 250px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-inline: auto;
 }
 @media (max-width: 768px) {
