@@ -12,9 +12,6 @@
     background-position: 0 center;
     animation: scroll-left 15s linear infinite;
     margin-bottom: 50px;
-    @include m.sp {
-      margin-bottom: 0;
-    }
   }
   .scroll-bottom {
     height: 100px;
