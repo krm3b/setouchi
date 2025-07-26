@@ -1,21 +1,5 @@
 @use '_mixin' as m;
 
-.footer-avatar{
-    position: relative;
-    margin-bottom: -30px;
-    margin-left: 4%;
-    z-index: -1;
-
-    img{
-        width: 100px;
-        height: 100px;
-    }
-
-    .footer-avatar2{
-        margin-left: -4%;
-    }
-}
-
 #footer {
     background-color: #B4C6D9;
     
@@ -132,11 +116,13 @@
                 .btn{
                     width: 40%;
                     margin: 40px auto 0 auto;
+                    border: none;
+                    border-radius: 40px;
 
                     @include m.sp {
                         width: 30%;
                     }
-                }  
+                }
             }
         }
     }

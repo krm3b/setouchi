@@ -122,6 +122,35 @@ $(function () {
   // --------------------------------------------------
 
 
+  // ------------------------------------------------
+  // how to use
+  // ------------------------------------------------
+
+  function isResponsive() {
+    return window.innerWidth <= 768;
+  }
+  
+  $(window).on("scroll resize", function () {
+    $(".flow-box").each(function () {
+      const targetPos = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (isResponsive()) {
+        if (!$(this).hasClass("inview") && scroll > targetPos - windowHeight + 100) {
+          $(this).addClass("inview");
+        }
+      } else {
+      // PC表示時：inviewを削除してリセット
+        $(this).removeClass("inview");
+      }
+    });
+  });
+
+  // リロード直後にも判定を行う
+  $(window).trigger("scroll");
+  // --------------------------------------------------
+
 
 
   // -------------------------------------------------
@@ -148,10 +177,9 @@ $(function () {
   });
 
 
-
-  //---------------------------------------------------
-  // to top
-  //---------------------------------------------------
+  /*=================================================
+    to top
+  ===================================================*/
   let pagetop = $(".to-top");
   // 最初に画面が表示された時は、トップに戻るボタンを非表示に設定
   pagetop.hide();
