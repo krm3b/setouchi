@@ -67,6 +67,28 @@ img {
   }
 }
 
+.footer-title {
+  font-family: "Gasoek One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #323E4B;
+  text-shadow: 11px 4px 2px rgba(0, 0, 0, 0.25);
+  margin-bottom: 40px;
+}
+.footer-title h2 {
+  position: relative;
+}
+.footer-title h2::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  height: 8px;
+  width: 80px;
+  background-color: #F29F57;
+}
+
 .btn {
   display: inline-block;
   background-color: #F29F57;
@@ -348,10 +370,6 @@ header .nav-list__btn {
     width: 100%;
     margin-bottom: 40px;
   }
-}
-#footer .container section .section-title {
-  font-size: 2rem;
-  text-align: center;
 }
 #footer .container .information {
   text-align: center;
