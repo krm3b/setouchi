@@ -41,7 +41,7 @@ $(function () {
   });
 
   /*=================================================
-  header :スムーススクロール
+    header :スムーススクロール
   ===================================================*/
   $('a[href^="#"]').click(function () {
     const headerHeight = $('header').outerHeight();
@@ -72,6 +72,53 @@ $(function () {
     $("header").removeClass("open");
   });
   
+  /*=================================================
+    advantage : 横スクロール
+  ===================================================*/
+  gsap.registerPlugin(ScrollTrigger);
+
+  // 初回実行
+  window.addEventListener("load", () => {
+    const items = document.querySelector(".advantage__items");
+    const inner = document.querySelectorAll(".advantage__items--item");
+    const totalScrollLength = items.scrollWidth - window.innerWidth;
+    
+    // function advantageScroll () {
+
+    // }
+    gsap.set(items,{
+      width: inner.length * 100 + "%"
+    });
+    gsap.set(inner,{
+      width: 100 / inner.length + "%"
+    });
+    console.log("items.scrollWidth : " + items.scrollWidth);
+    console.log("window.innerWidth : " + window.innerWidth);
+    console.log("totalScrollLength : " + totalScrollLength);
+
+    gsap.to(items, {
+      x: -totalScrollLength,    // 左へ動かす距離
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".advantage",  // どの要素でスクロール制御するか
+        start: "-80px top",     // セクションの上から80px上で発火
+        end: () => `+=${totalScrollLength}`, // この距離ぶんだけアニメーションする
+        scrub: true,            // スクロールに合わせてぬるぬる動く
+        pin: true,              // セクションを固定
+        anticipatePin: 1,
+        markers: true, // デバッグしたい時はtrue
+      }
+    });
+
+    ScrollTrigger.refresh();
+  });
+
+    // リサイズ対応
+  window.addEventListener("resize", () => {
+    ScrollTrigger.refresh();
+  });
+
+
   /*=================================================
     Inview（画面に表示されたタイミングで処理を実行）
   ===================================================*/
