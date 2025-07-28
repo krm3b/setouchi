@@ -72,6 +72,27 @@ $(function () {
     $("header").removeClass("open");
   });
   
+  //--------------------------------------------------
+  // section-title,footer-title
+  // -------------------------------------------------
+  
+  $(document).ready(function () {
+    function checkScroll() {
+      $('.section-title,.footer-title').each(function () {
+        const elemTop = $(this).offset().top;
+        const scroll = $(window).scrollTop();
+        const windowHeight = $(window).height();
+
+        if (scroll + windowHeight > elemTop + 50) { // 50px手前で発火
+          $(this).addClass('show');
+        }
+      });
+    }
+
+    $(window).on('scroll', checkScroll);
+    $(window).on('load', checkScroll); // ページ読み込み時にも実行
+  });
+
   /*=================================================
     advantage : 横スクロール
   ===================================================*/
