@@ -12,14 +12,23 @@ header {
     position: relative;
     z-index: 100;
 
+    // メインページ
     &.main-header {
         @include m.sp {
             height: 0;
         }
     }
 
+    // 固定ページ
     &.sub-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
         @include m.sp {
+            position: static;
+            box-shadow: none; 
             background-color: m.$base-color;
         }
     }
