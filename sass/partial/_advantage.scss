@@ -18,8 +18,12 @@
         &--item {
             min-width: 100vw;
             display: flex;
-            gap: 10px;
+            padding-inline: 5px;
             height: 60vh;
+            
+            @include m.sp {
+                height: 70vh;
+            }
 
             .inner {
                 max-width: 1200px;
@@ -33,6 +37,10 @@
                 border-top-left-radius: 30px;
                 border-bottom-right-radius: 30px;
 
+                @include m.sp {
+                    padding-inline: 5%;
+                }
+
                 img {
                     object-fit: cover;
                     object-position: center center;
@@ -45,11 +53,18 @@
                     h3 {
                         margin-bottom: 15px;
                         letter-spacing: 2px;
+                        @include m.sp {
+                            margin-bottom: 10px;
+                        }
                     }
 
                     p {
                         margin-bottom: 15px;
                         line-height: 250%;
+                        @include m.sp {
+                            margin-bottom: 10px;
+                            line-height: 180%;
+                        }
                     }
                     img {
                         width: 100%;
@@ -62,15 +77,22 @@
                     h3 {
                         margin-top: 20px;
                         letter-spacing: 2px;
+                        @include m.sp {
+                            margin-top: 15px;
+                        }
                     }
 
                     p {
                         margin-top: 15px;
                         line-height: 250%;
+                        @include m.sp {
+                            margin-top: 10px;
+                            line-height: 200%;
+                        }
                     }
                     img {
                         width: 100%;
-                        height: 30vh;
+                        height: 25vh;
                     }
                     
                 }
@@ -89,10 +111,21 @@
                         line-height: 250%;
                         margin-left: 3%;
                         letter-spacing: 3px;
+
+                        @include m.sp {
+                            line-height: 180%;
+                            margin-left: 1.5%;
+                            letter-spacing: 1.5px;
+                        }
                     }
                     img {
                         width: 70%;
                         height: 100%;
+                        
+                        @include m.sp {
+                            width: 50%;
+                            object-position: 70% 60%;
+                        }
                     }
                 }
 
