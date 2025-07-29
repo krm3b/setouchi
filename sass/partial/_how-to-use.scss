@@ -1,13 +1,22 @@
 @use '_mixin' as m;
 
 .how-to-use {
-    margin-bottom: 100px;
+    margin-top: 80px;
+    margin-bottom: m.$section-margin;
 
-    .container {
+    @include m.sp{
+        margin-top: 0;
+        margin-bottom: m.$section-margin-sp;
+    }
+
+    .flow-wrapper{
         position: relative;
         display: flex;
+        max-width: 1200px;
         width: 100%;
         overflow: hidden;
+        padding-inline: 2%;
+        margin: 0 auto;
 
         @include m.sp{
             flex-direction: column;
@@ -65,38 +74,38 @@
 
         .flow1 {
             background-color: m.$main-color;
-            max-width: 280px;
+            max-width: 360px;
             padding-left: 20px;
 
             @include m.sp{
                 max-width: 360px;
-                padding-left: 50px;
+                padding-left: 30px;
             }
 
             img {
-                max-width: 200px;
                 width: 100%;
             }
         }
 
         .flow2 {
             background-color: #D0DCEA;
-            max-width: 320px;
+            max-width: 400px;
             padding-left: 50px;
 
             @include m.sp{
                 max-width: 360px;
                 padding-top: 10px;
-                padding-left: 50px;
+                padding-left: 30px;
             }
         
             .shortcut {
                 display: flex;
-                margin-left: 10px;
+                align-items: center;
+                margin-left: 30px;
 
                 img {
-                    width: 36px;
-                    height:36px;
+                    width: 60px;
+                    height: 60px;
                     object-fit: cover;
                     margin-left: 10px;
                 }
@@ -105,38 +114,18 @@
 
         .flow3 {
             background-color: #B4C6D9;
-            max-width: 360px;
+            max-width: 440px;
             padding-left: 70px;
 
             @include m.sp{
-                height: 500px;
+                max-width: 360px;
+                height: 540px;
                 padding-top: 20px;
-                padding-left: 50px;
+                padding-left: 30px;
             }
 
-            .flow-title h3 {
-                margin-top: -10px;
-            }
-
-            .flow3-wrapper {
-                h4 {
-                    margin-bottom: 20px;
-                }
-
-                .flow3-img {
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-
-                    p {
-                        margin-top: 10px;
-                    }
-
-                    img {
-                        width: 100px;
-                        height: 75px;
-                    }
-                }
+            img{
+                width: 100%;
             }
         }
 
@@ -171,16 +160,16 @@
         .flow3 {
             animation-delay: 1s;
         }
+    }
+}
 
-        @keyframes slideIn {
-            to {
-                opacity: 1;
-                transform: translateX(0);
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
 
-                @include m.sp{
-                    transform: translateY(0);
-                }
-            }
+        @include m.sp{
+            transform: translateY(0);
         }
     }
 }
