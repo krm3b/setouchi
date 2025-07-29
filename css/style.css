@@ -131,7 +131,7 @@ img {
   pointer-events: none;
 }
 .btn:hover {
-  background-color: #f0913f;
+  background-color: rgb(240.1685082873, 145.4751381215, 63.3314917127);
 }
 .btn:hover::before {
   animation: shine 0.7s;
@@ -146,27 +146,28 @@ img {
     left: 100%;
   }
 }
-.flow {
-  max-width: 280px;
-  width: 100%;
-  padding: 20px 12px;
-  margin-top: 20px;
-  z-index: 1;
-}
-.flow .flow-title {
+.flow-title {
   display: flex;
   align-items: center;
+  margin-top: 40px;
 }
-.flow .flow-title p {
+.flow-title p {
   color: #fff;
   font-size: 3rem;
   font-weight: bold;
 }
-.flow .flow-title h3 {
+.flow-title h3 {
   font-size: 1rem;
   font-weight: bold;
   margin-left: 8px;
-  margin-bottom: 12px;
+  margin-top: 16px;
+}
+
+.flow {
+  max-width: 300px;
+  width: 100%;
+  padding: 20px 12px;
+  z-index: 1;
 }
 .flow ul {
   margin-bottom: 40px;
@@ -176,7 +177,8 @@ img {
   margin-left: 20px;
 }
 .flow p {
-  margin-bottom: 20px;
+  font-size: 0.875rem;
+  margin-bottom: 10px;
 }
 
 .footer-avatar {
@@ -188,11 +190,21 @@ img {
 .footer-avatar img {
   width: 100px;
   height: 100px;
+  transform-origin: center bottom;
+  animation: swing 2s infinite linear;
 }
 .footer-avatar .footer-avatar2 {
   margin-left: -4%;
 }
 
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+}
 header {
   height: 80px;
   width: 100%;
@@ -524,6 +536,7 @@ header .nav-list__btn {
   position: fixed;
   right: 30px;
   bottom: 50px;
+  z-index: 20;
 }
 #footer .to-top a {
   position: relative;
@@ -1237,7 +1250,7 @@ header .nav-list__btn {
   padding-block: 20px;
 }
 .event .accordion .item .title:hover {
-  background-color: #d2ddea;
+  background-color: rgb(209.5853658537, 220.9390243902, 233.9146341463);
 }
 .event .accordion .item .title:hover span {
   transform: scale(1.2);
@@ -1363,6 +1376,11 @@ header .nav-list__btn {
 .state {
   margin-bottom: 100px;
 }
+@media (max-width: 768px) {
+  .state {
+    margin-bottom: 50px;
+  }
+}
 .state .container .grid-gallery {
   max-width: 100%;
   margin: 0 auto;
@@ -1397,21 +1415,6 @@ header .nav-list__btn {
 .state .container .grid-gallery .item img:hover {
   transform: scale(1.05);
 }
-.state .container .grid-gallery .item.item-morewide img {
-  object-position: 50% 70%;
-}
-.state .container .grid-gallery .item.item-tall:nth-of-type(1) img {
-  object-position: 0% 50%;
-}
-.state .container .grid-gallery .item.item-tall:nth-of-type(2) img {
-  object-position: 40% 50%;
-}
-.state .container .grid-gallery .item.item-tall:nth-of-type(3) img {
-  object-position: 20% 50%;
-}
-.state .container .grid-gallery .item.item-moretall img {
-  object-position: 4% 50%;
-}
 .state .container .grid-gallery .item .caption {
   position: absolute;
   inset: 0;
@@ -1437,39 +1440,64 @@ header .nav-list__btn {
 .state .container .grid-gallery .item.item-morewide {
   grid-column: span 3;
 }
+.state .container .grid-gallery .item.item-morewide img {
+  object-position: 50% 70%;
+}
 .state .container .grid-gallery .item.item-tall {
   grid-row: span 2;
+}
+.state .container .grid-gallery .item.item-tall.tall1 img {
+  object-position: 30% 50%;
+}
+.state .container .grid-gallery .item.item-tall.tall2 img {
+  object-position: 45% 50%;
+}
+.state .container .grid-gallery .item.item-tall.tall3 img {
+  object-position: 5% 50%;
 }
 .state .container .grid-gallery .item.item-moretall {
   grid-row: span 3;
 }
+.state .container .grid-gallery .item.item-moretall img {
+  object-position: 4% 50%;
+}
 
 .how-to-use {
+  margin-top: 80px;
   margin-bottom: 100px;
 }
-.how-to-use .container {
+@media (max-width: 768px) {
+  .how-to-use {
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+}
+.how-to-use .flow-wrapper {
   position: relative;
   display: flex;
+  max-width: 1200px;
   width: 100%;
   overflow: hidden;
+  padding-inline: 2%;
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
-  .how-to-use .container {
+  .how-to-use .flow-wrapper {
     flex-direction: column;
   }
 }
-.how-to-use .container .flow1, .how-to-use .container .flow2, .how-to-use .container .flow3 {
+.how-to-use .flow-wrapper .flow1, .how-to-use .flow-wrapper .flow2, .how-to-use .flow-wrapper .flow3 {
   position: relative;
   width: 100%;
   height: 560px;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow1, .how-to-use .container .flow2, .how-to-use .container .flow3 {
+  .how-to-use .flow-wrapper .flow1, .how-to-use .flow-wrapper .flow2, .how-to-use .flow-wrapper .flow3 {
     height: 480px;
     margin: 0 auto;
   }
 }
-.how-to-use .container .flow1 .side-arrow, .how-to-use .container .flow2 .side-arrow, .how-to-use .container .flow3 .side-arrow {
+.how-to-use .flow-wrapper .flow1 .side-arrow, .how-to-use .flow-wrapper .flow2 .side-arrow, .how-to-use .flow-wrapper .flow3 .side-arrow {
   position: absolute;
   top: 0;
   left: 0px;
@@ -1478,20 +1506,20 @@ header .nav-list__btn {
   height: 560px;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow1 .side-arrow, .how-to-use .container .flow2 .side-arrow, .how-to-use .container .flow3 .side-arrow {
+  .how-to-use .flow-wrapper .flow1 .side-arrow, .how-to-use .flow-wrapper .flow2 .side-arrow, .how-to-use .flow-wrapper .flow3 .side-arrow {
     display: none;
   }
 }
-.how-to-use .container .flow1 .side-arrow svg, .how-to-use .container .flow2 .side-arrow svg, .how-to-use .container .flow3 .side-arrow svg {
+.how-to-use .flow-wrapper .flow1 .side-arrow svg, .how-to-use .flow-wrapper .flow2 .side-arrow svg, .how-to-use .flow-wrapper .flow3 .side-arrow svg {
   width: 100%;
   height: 100%;
   display: block;
 }
-.how-to-use .container .flow1 .bottom-arrow, .how-to-use .container .flow2 .bottom-arrow, .how-to-use .container .flow3 .bottom-arrow {
+.how-to-use .flow-wrapper .flow1 .bottom-arrow, .how-to-use .flow-wrapper .flow2 .bottom-arrow, .how-to-use .flow-wrapper .flow3 .bottom-arrow {
   display: none;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow1 .bottom-arrow, .how-to-use .container .flow2 .bottom-arrow, .how-to-use .container .flow3 .bottom-arrow {
+  .how-to-use .flow-wrapper .flow1 .bottom-arrow, .how-to-use .flow-wrapper .flow2 .bottom-arrow, .how-to-use .flow-wrapper .flow3 .bottom-arrow {
     position: absolute;
     top: 0;
     left: 0;
@@ -1500,86 +1528,72 @@ header .nav-list__btn {
     height: 50px;
     z-index: 2;
   }
-  .how-to-use .container .flow1 .bottom-arrow svg, .how-to-use .container .flow2 .bottom-arrow svg, .how-to-use .container .flow3 .bottom-arrow svg {
+  .how-to-use .flow-wrapper .flow1 .bottom-arrow svg, .how-to-use .flow-wrapper .flow2 .bottom-arrow svg, .how-to-use .flow-wrapper .flow3 .bottom-arrow svg {
     width: 100%;
     height: 100%;
     display: block;
   }
 }
-.how-to-use .container .flow1 {
+.how-to-use .flow-wrapper .flow1 {
   background-color: #E3EAF2;
-  max-width: 280px;
+  max-width: 360px;
   padding-left: 20px;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow1 {
+  .how-to-use .flow-wrapper .flow1 {
     max-width: 360px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 }
-.how-to-use .container .flow1 img {
-  max-width: 200px;
+.how-to-use .flow-wrapper .flow1 img {
   width: 100%;
 }
-.how-to-use .container .flow2 {
+.how-to-use .flow-wrapper .flow2 {
   background-color: #D0DCEA;
-  max-width: 320px;
+  max-width: 400px;
   padding-left: 50px;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow2 {
+  .how-to-use .flow-wrapper .flow2 {
     max-width: 360px;
     padding-top: 10px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 }
-.how-to-use .container .flow2 .shortcut {
+.how-to-use .flow-wrapper .flow2 .shortcut {
   display: flex;
-  margin-left: 10px;
+  align-items: center;
+  margin-left: 30px;
 }
-.how-to-use .container .flow2 .shortcut img {
-  width: 36px;
-  height: 36px;
+.how-to-use .flow-wrapper .flow2 .shortcut img {
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   margin-left: 10px;
 }
-.how-to-use .container .flow3 {
+.how-to-use .flow-wrapper .flow3 {
   background-color: #B4C6D9;
-  max-width: 360px;
+  max-width: 440px;
   padding-left: 70px;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow3 {
-    height: 500px;
+  .how-to-use .flow-wrapper .flow3 {
+    max-width: 360px;
+    height: 540px;
     padding-top: 20px;
-    padding-left: 50px;
+    padding-left: 30px;
   }
 }
-.how-to-use .container .flow3 .flow-title h3 {
-  margin-top: -10px;
+.how-to-use .flow-wrapper .flow3 img {
+  width: 100%;
 }
-.how-to-use .container .flow3 .flow3-wrapper h4 {
-  margin-bottom: 20px;
-}
-.how-to-use .container .flow3 .flow3-wrapper .flow3-img {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.how-to-use .container .flow3 .flow3-wrapper .flow3-img p {
-  margin-top: 10px;
-}
-.how-to-use .container .flow3 .flow3-wrapper .flow3-img img {
-  width: 100px;
-  height: 75px;
-}
-.how-to-use .container .flow-box {
+.how-to-use .flow-wrapper .flow-box {
   opacity: 0;
   transform: translateX(-100px);
   animation: slideIn 1s ease-out forwards;
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow-box {
+  .how-to-use .flow-wrapper .flow-box {
     animation: none;
     opacity: 0;
     transform: translateY(-100px);
@@ -1587,32 +1601,30 @@ header .nav-list__btn {
   }
 }
 @media (max-width: 768px) {
-  .how-to-use .container .flow-box.inview {
+  .how-to-use .flow-wrapper .flow-box.inview {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.how-to-use .container .flow1 {
+.how-to-use .flow-wrapper .flow1 {
   animation-delay: 0s;
 }
-.how-to-use .container .flow2 {
+.how-to-use .flow-wrapper .flow2 {
   animation-delay: 0.5s;
 }
-.how-to-use .container .flow3 {
+.how-to-use .flow-wrapper .flow3 {
   animation-delay: 1s;
 }
+
 @keyframes slideIn {
   to {
     opacity: 1;
     transform: translateX(0);
     @media (max-width: 768px) {
-      .how-to-use .container {
-        transform: translateY(0);
-      }
+      transform: translateY(0);
     }
   }
 }
-
 .floor {
   margin-bottom: 100px;
 }

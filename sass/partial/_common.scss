@@ -58,6 +58,7 @@ img {
         transform: translateX(0);
     }
     
+
     &::before {
         content: '';
         position: absolute;
@@ -67,7 +68,7 @@ img {
         width: 130px;
         background-color: m.$accent-color;
     }
-    
+
     @include m.sp {
         font-size: 2.5rem;
 
@@ -78,6 +79,7 @@ img {
     }
 
 }
+
 .footer-title {
     font-family: "Gasoek One", sans-serif;
     font-weight: 400;
@@ -101,8 +103,10 @@ img {
         font-size: 2rem;
     }
     
+
     h2 {
         position: relative;
+
         &::before {
             content: '';
             position: absolute;
@@ -157,31 +161,34 @@ img {
     }
 }
 
+
+
+.flow-title {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+
+    p {
+        color: #fff;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: 1rem;
+        font-weight: bold;
+        margin-left: 8px;
+        margin-top: 16px;
+    }
+}
+
+
+
 .flow {
-    // border: 1px solid #333;
-    max-width: 280px;
+    max-width: 300px;
     width: 100%;
     padding: 20px 12px;
-    margin-top: 20px;
     z-index: 1;
-
-    .flow-title {
-        display: flex;
-        align-items: center;
-
-        p {
-            color: #fff;
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        h3 {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-left: 8px;
-            margin-bottom: 12px;
-        }
-    }
 
     ul {
         margin-bottom: 40px;
@@ -193,7 +200,8 @@ img {
     }
 
     p {
-        margin-bottom: 20px;
+        font-size: 0.875rem;
+        margin-bottom: 10px;
     }
 }
 
@@ -202,13 +210,25 @@ img {
     margin-bottom: -30px;
     margin-left: 4%;
     z-index: -1;
+    
 
     img {
         width: 100px;
         height: 100px;
+        transform-origin: center bottom;
+        animation: swing 2s infinite linear;
     }
 
     .footer-avatar2 {
         margin-left: -4%;
+    }
+}
+
+@keyframes swing{
+    0% , 100%{
+        transform: rotate(5deg);
+    }
+    50%{
+        transform: rotate(-5deg);
     }
 }
