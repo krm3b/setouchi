@@ -7,7 +7,7 @@
   }
   .scroll-top {
     height: 100px;
-    background: url(/img/event-logo.png) repeat-x;
+    background: url(../img/event-logo.png) repeat-x;
     background-size: auto 100%;
     background-position: 0 center;
     animation: scroll-left 15s linear infinite;
@@ -15,7 +15,7 @@
   }
   .scroll-bottom {
     height: 100px;
-    background: url(/img/event-logo.png) repeat-x;
+    background: url(../img/event-logo.png) repeat-x;
     background-position: 0 center;
     background-size: auto 100%;
     animation: scroll-right 15s linear infinite;
@@ -58,6 +58,7 @@
       .title {
         width: 100%;
         background-color: m.$main-color;
+        color: black;
         border-radius: 10px;
         text-align: center;
         line-height: 15px;
