@@ -131,7 +131,7 @@ img {
   pointer-events: none;
 }
 .btn:hover {
-  background-color: #f0913f;
+  background-color: rgb(240.1685082873, 145.4751381215, 63.3314917127);
 }
 .btn:hover::before {
   animation: shine 0.7s;
@@ -439,8 +439,8 @@ header .nav-list__btn {
   }
 }
 #footer .container section {
-  width: 46%;
-  padding: 20px;
+  width: 47%;
+  padding: 16px;
 }
 @media (max-width: 768px) {
   #footer .container section {
@@ -529,6 +529,7 @@ header .nav-list__btn {
   margin: 40px auto 0 auto;
   border: none;
   border-radius: 40px;
+  color: #333333;
 }
 @media (max-width: 768px) {
   #footer .container .contact form .btn {
@@ -1247,7 +1248,7 @@ header .nav-list__btn {
   padding-block: 20px;
 }
 .event .accordion .item .title:hover {
-  background-color: #d2ddea;
+  background-color: rgb(209.5853658537, 220.9390243902, 233.9146341463);
 }
 .event .accordion .item .title:hover span {
   transform: scale(1.2);
@@ -1430,6 +1431,9 @@ header .nav-list__btn {
 .state .container .grid-gallery .item.item-large {
   grid-column: span 2;
   grid-row: span 2;
+}
+.state .container .grid-gallery .item.item-large img {
+  object-position: 10% 50%;
 }
 .state .container .grid-gallery .item.item-wide {
   grid-column: span 2;
