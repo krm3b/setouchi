@@ -68,6 +68,10 @@
         transition: opacity .8s ease,
                     transform .8s ease;
         
+        @include m.sp {
+            font-size: 1.6rem;
+        }
+
         &.displayAnime {
             opacity: 1;
             transform: translate(-50%, -50%);
