@@ -17,6 +17,7 @@
       background-image: url(../img/voice.png);
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       background-attachment: fixed;
       opacity: 0.2;
       z-index: -1;
@@ -38,7 +39,6 @@
       .avatar {
         width: 80px;
         height: 90px;
-        cursor: pointer;
       }
       .comment {
         width: 65%;

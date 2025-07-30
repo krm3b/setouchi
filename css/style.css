@@ -205,6 +205,17 @@ img {
     transform: rotate(-5deg);
   }
 }
+.js-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js-fade.is-show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
 header {
   height: 80px;
   width: 100%;
@@ -273,27 +284,22 @@ header .toggle-btn {
   }
   header .toggle-btn span:nth-child(1) {
     top: 25%;
+    opacity: 1;
+    transform: opacity 0.7s ease;
   }
   header .toggle-btn span:nth-child(2) {
     position: relative;
   }
-  header .toggle-btn span:nth-child(2)::before, header .toggle-btn span:nth-child(2)::after {
+  header .toggle-btn span:nth-child(2)::after {
+    content: "MENU";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.7s ease;
-  }
-  header .toggle-btn span:nth-child(2)::after {
-    content: "MENU";
-    opacity: 1;
-  }
-  header .toggle-btn span:nth-child(2)::before {
-    content: "CLOSE";
-    opacity: 0;
   }
   header .toggle-btn span:nth-child(3) {
     top: 75%;
+    opacity: 1;
   }
 }
 header .nav-list {
@@ -383,10 +389,7 @@ header .nav-list__btn {
 }
 @media (max-width: 768px) {
   header.open .toggle-btn span:nth-child(2)::after {
-    opacity: 0;
-  }
-  header.open .toggle-btn span:nth-child(2)::before {
-    opacity: 1;
+    content: "CLOSE";
   }
 }
 @media (max-width: 768px) {
@@ -436,8 +439,8 @@ header .nav-list__btn {
   }
 }
 #footer .container section {
-  width: 46%;
-  padding: 20px;
+  width: 47%;
+  padding: 16px;
 }
 @media (max-width: 768px) {
   #footer .container section {
@@ -461,7 +464,8 @@ header .nav-list__btn {
 #footer .container .information .info .info-img img {
   width: 32px;
   height: 32px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #footer .container .information .info dl {
   display: flex;
@@ -526,6 +530,7 @@ header .nav-list__btn {
   margin: 40px auto 0 auto;
   border: none;
   border-radius: 40px;
+  color: #333333;
 }
 @media (max-width: 768px) {
   #footer .container .contact form .btn {
@@ -546,7 +551,8 @@ header .nav-list__btn {
   background-size: 190%;
   width: 80px;
   height: 80px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px solid #fff;
   border-radius: 50%;
   font-weight: bold;
@@ -733,7 +739,8 @@ header .nav-list__btn {
 }
 .loading2 img {
   width: 320px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   animation: blurAnime 1s ease 5s forwards;
 }
 .loading2 p {
@@ -846,25 +853,19 @@ header .nav-list__btn {
 .mainvisual__title {
   position: absolute;
   left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 20px));
   line-height: 250%;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   z-index: 2;
-  transition: opacity 0.3s ease, left 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.mainvisual__title.displayAnime {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes textAnime {
-  from {
-    top: 55%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-  }
-  to {
-    top: 50%;
-    opacity: 1;
-  }
-}
 .advantage {
   position: relative;
   height: calc(100vh - 80px);
@@ -878,6 +879,7 @@ header .nav-list__btn {
 }
 .advantage__items {
   display: flex;
+  width: -moz-max-content;
   width: max-content;
   height: 100%;
 }
@@ -910,8 +912,10 @@ header .nav-list__btn {
   }
 }
 .advantage__items--item .inner img {
-  object-fit: cover;
-  object-position: center center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
   display: block;
 }
 .advantage__items--item .inner.item1 {
@@ -996,7 +1000,8 @@ header .nav-list__btn {
 @media (max-width: 768px) {
   .advantage__items--item .inner.item3 img {
     width: 50%;
-    object-position: 70% 60%;
+    -o-object-position: 70% 60%;
+       object-position: 70% 60%;
   }
 }
 
@@ -1020,6 +1025,7 @@ header .nav-list__btn {
   background-image: url(../img/voice.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-attachment: fixed;
   opacity: 0.2;
   z-index: -1;
@@ -1045,7 +1051,6 @@ header .nav-list__btn {
 .voice .container .item-right .avatar {
   width: 80px;
   height: 90px;
-  cursor: pointer;
 }
 .voice .container .item-left .comment,
 .voice .container .item-right .comment {
@@ -1183,7 +1188,7 @@ header .nav-list__btn {
 }
 .event .scroll-top {
   height: 100px;
-  background: url(/img/event-logo.png) repeat-x;
+  background: url(../img/event-logo.png) repeat-x;
   background-size: auto 100%;
   background-position: 0 center;
   animation: scroll-left 15s linear infinite;
@@ -1191,7 +1196,7 @@ header .nav-list__btn {
 }
 .event .scroll-bottom {
   height: 100px;
-  background: url(/img/event-logo.png) repeat-x;
+  background: url(../img/event-logo.png) repeat-x;
   background-position: 0 center;
   background-size: auto 100%;
   animation: scroll-right 15s linear infinite;
@@ -1240,6 +1245,7 @@ header .nav-list__btn {
 .event .accordion .item .title {
   width: 100%;
   background-color: #E3EAF2;
+  color: black;
   border-radius: 10px;
   text-align: center;
   line-height: 15px;
@@ -1291,7 +1297,8 @@ header .nav-list__btn {
   width: 47%;
   height: 300px;
   border-radius: 20px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (max-width: 768px) {
   .event .accordion .item .content .left {
@@ -1409,7 +1416,8 @@ header .nav-list__btn {
 .state .container .grid-gallery .item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.5s ease;
 }
 .state .container .grid-gallery .item img:hover {
@@ -1434,6 +1442,10 @@ header .nav-list__btn {
   grid-column: span 2;
   grid-row: span 2;
 }
+.state .container .grid-gallery .item.item-large img {
+  -o-object-position: 10% 50%;
+     object-position: 10% 50%;
+}
 .state .container .grid-gallery .item.item-wide {
   grid-column: span 2;
 }
@@ -1441,25 +1453,30 @@ header .nav-list__btn {
   grid-column: span 3;
 }
 .state .container .grid-gallery .item.item-morewide img {
-  object-position: 50% 70%;
+  -o-object-position: 50% 70%;
+     object-position: 50% 70%;
 }
 .state .container .grid-gallery .item.item-tall {
   grid-row: span 2;
 }
 .state .container .grid-gallery .item.item-tall.tall1 img {
-  object-position: 30% 50%;
+  -o-object-position: 30% 50%;
+     object-position: 30% 50%;
 }
 .state .container .grid-gallery .item.item-tall.tall2 img {
-  object-position: 45% 50%;
+  -o-object-position: 45% 50%;
+     object-position: 45% 50%;
 }
 .state .container .grid-gallery .item.item-tall.tall3 img {
-  object-position: 5% 50%;
+  -o-object-position: 5% 50%;
+     object-position: 5% 50%;
 }
 .state .container .grid-gallery .item.item-moretall {
   grid-row: span 3;
 }
 .state .container .grid-gallery .item.item-moretall img {
-  object-position: 4% 50%;
+  -o-object-position: 4% 50%;
+     object-position: 4% 50%;
 }
 
 .how-to-use {
@@ -1568,7 +1585,8 @@ header .nav-list__btn {
 .how-to-use .flow-wrapper .flow2 .shortcut img {
   width: 60px;
   height: 60px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-left: 10px;
 }
 .how-to-use .flow-wrapper .flow3 {
@@ -1704,7 +1722,8 @@ header .nav-list__btn {
 .floor .container .work-floor .fade-in {
   height: 250px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-inline: auto;
 }
 .floor .container .work-floor .text {
@@ -1804,7 +1823,8 @@ header .nav-list__btn {
   width: 48%;
   height: 250px;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   margin-inline: auto;
 }
 @media (max-width: 768px) {
