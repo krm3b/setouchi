@@ -12,8 +12,8 @@
         }
 
         section{
-            width: 46%;
-            padding: 20px;
+            width: 47%;
+            padding: 16px;
 
             @include m.sp {
                 width: 100%;
@@ -118,6 +118,7 @@
                     margin: 40px auto 0 auto;
                     border: none;
                     border-radius: 40px;
+                    color: m.$font-color;
 
                     @include m.sp {
                         width: 30%;
