@@ -131,7 +131,7 @@ img {
   pointer-events: none;
 }
 .btn:hover {
-  background-color: rgb(240.1685082873, 145.4751381215, 63.3314917127);
+  background-color: #f0913f;
 }
 .btn:hover::before {
   animation: shine 0.7s;
@@ -205,6 +205,17 @@ img {
     transform: rotate(-5deg);
   }
 }
+.js-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.js-fade.is-show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
 header {
   height: 80px;
   width: 100%;
@@ -273,27 +284,22 @@ header .toggle-btn {
   }
   header .toggle-btn span:nth-child(1) {
     top: 25%;
+    opacity: 1;
+    transform: opacity 0.7s ease;
   }
   header .toggle-btn span:nth-child(2) {
     position: relative;
   }
-  header .toggle-btn span:nth-child(2)::before, header .toggle-btn span:nth-child(2)::after {
+  header .toggle-btn span:nth-child(2)::after {
+    content: "MENU";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.7s ease;
-  }
-  header .toggle-btn span:nth-child(2)::after {
-    content: "MENU";
-    opacity: 1;
-  }
-  header .toggle-btn span:nth-child(2)::before {
-    content: "CLOSE";
-    opacity: 0;
   }
   header .toggle-btn span:nth-child(3) {
     top: 75%;
+    opacity: 1;
   }
 }
 header .nav-list {
@@ -383,10 +389,7 @@ header .nav-list__btn {
 }
 @media (max-width: 768px) {
   header.open .toggle-btn span:nth-child(2)::after {
-    opacity: 0;
-  }
-  header.open .toggle-btn span:nth-child(2)::before {
-    opacity: 1;
+    content: "CLOSE";
   }
 }
 @media (max-width: 768px) {
@@ -846,25 +849,19 @@ header .nav-list__btn {
 .mainvisual__title {
   position: absolute;
   left: 50%;
-  top: 55%;
-  transform: translate(-50%, -50%);
+  top: 50%;
+  transform: translate(-50%, calc(-50% + 20px));
   line-height: 250%;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
   z-index: 2;
-  transition: opacity 0.3s ease, left 0.3s ease;
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.mainvisual__title.displayAnime {
+  opacity: 1;
+  transform: translate(-50%, -50%);
 }
 
-@keyframes textAnime {
-  from {
-    top: 55%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-  }
-  to {
-    top: 50%;
-    opacity: 1;
-  }
-}
 .advantage {
   position: relative;
   height: calc(100vh - 80px);
@@ -1250,7 +1247,7 @@ header .nav-list__btn {
   padding-block: 20px;
 }
 .event .accordion .item .title:hover {
-  background-color: rgb(209.5853658537, 220.9390243902, 233.9146341463);
+  background-color: #d2ddea;
 }
 .event .accordion .item .title:hover span {
   transform: scale(1.2);
