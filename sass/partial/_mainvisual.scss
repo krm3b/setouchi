@@ -59,34 +59,20 @@
     &__title {
         position: absolute;
         left: 50%;
-        top: 55%;
-        transform: translate(-50%, -50%);
+        top: 50%;
+        transform: translate(-50%, calc(-50% + 20px));
         line-height: 250%;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         z-index: 2;
-        transition: opacity .3s ease,
-                    left .3s ease;
-        
-        // &.displayAnime {
-        //     animation: textAnime 1.3s ease forwards;
-
-        // }
-
-    }
-
-}
-
-// 下から上にテキストアニメーション
-@keyframes textAnime {
-    from {
-        top: 55%;
-        transform: translate(-50%, -50%);
         opacity: 0;
+        transition: opacity .8s ease,
+                    transform .8s ease;
+        
+        &.displayAnime {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
 
     }
 
-    to { 
-        top: 50%;
-        opacity: 1;
-    }
 }
